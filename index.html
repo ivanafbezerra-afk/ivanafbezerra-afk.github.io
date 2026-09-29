@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ivana Bezerra | Portfólio GEO</title>
+
+  <meta
+    name="description"
+    content="Portfólio de Ivana Bezerra com projetos de geoprocessamento, sensoriamento remoto, cartografia temática e análise espacial."
+  >
+
+  <style>
+    :root {
+      --verde-escuro: #173f46;
+      --verde: #16877c;
+      --verde-claro: #dcefed;
+      --bege: #ead79d;
+      --fundo: #f6f7f5;
+      --branco: #ffffff;
+      --texto: #24343a;
+      --texto-claro: #607078;
+      --borda: #dce4e3;
+      --sombra: 0 18px 45px rgba(23, 63, 70, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    /* MENU */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--verde-escuro);
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--verde);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--texto);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .menu a:hover {
+      color: var(--verde);
+    }
+
+    /* APRESENTAÇÃO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(234, 215, 157, 0.22), transparent 28%),
+        linear-gradient(135deg, #173f46 0%, #0d3137 100%);
+      color: var(--branco);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 70px;
+      padding: 90px 0;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 17px;
+      border-radius: 999px;
+      background: var(--bege);
+      color: var(--verde-escuro);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.02;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--bege);
+    }
+
+    .hero h2 {
+      margin-top: 24px;
+      color: #cfe1e0;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin-top: 22px;
+      color: #d8e4e4;
+      font-size: 1.05rem;
+    }
+
+    .botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .botao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 8px;
+      background: var(--bege);
+      color: var(--verde-escuro);
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .botao:hover {
+      transform: translateY(-2px);
+    }
+
+    .botao-secundario {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: var(--branco);
+    }
+
+    .simbolo-geo {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      margin: auto;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+    }
+
+    .simbolo-geo::before,
+    .simbolo-geo::after {
+      position: absolute;
+      content: "";
+      border: 1px solid rgba(234, 215, 157, 0.5);
+      border-radius: 50%;
+    }
+
+    .simbolo-geo::before {
+      inset: 42px;
+    }
+
+    .simbolo-geo::after {
+      inset: 95px;
+      background: var(--bege);
+      box-shadow: 0 0 70px rgba(234, 215, 157, 0.25);
+    }
+
+    .linha-mapa {
+      position: absolute;
+      top: 50%;
+      left: -15%;
+      width: 130%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(-30deg);
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .cabecalho-secao {
+      margin-bottom: 48px;
+    }
+
+    .cabecalho-secao span {
+      color: var(--verde);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .cabecalho-secao h2 {
+      margin-top: 8px;
+      color: var(--verde-escuro);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .cabecalho-secao p {
+      max-width: 720px;
+      margin-top: 15px;
+      color: var(--texto-claro);
+    }
+
+    /* SOBRE */
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .sobre-texto p {
+      margin-bottom: 17px;
+      color: var(--texto-claro);
+      font-size: 1.02rem;
+    }
+
+    .destaque {
+      padding: 32px;
+      border-left: 5px solid var(--verde);
+      border-radius: 10px;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+    }
+
+    .destaque h3 {
+      margin-bottom: 12px;
+      color: var(--verde-escuro);
+    }
+
+    /* COMPETÊNCIAS */
+
+    .competencias {
+      background: var(--branco);
+    }
+
+    .grade-competencias {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .competencia {
+      min-height: 150px;
+      padding: 26px;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      background: var(--fundo);
+    }
+
+    .competencia-numero {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--verde);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .competencia h3 {
+      margin-bottom: 8px;
+      color: var(--verde-escuro);
+      font-size: 1rem;
+    }
+
+    .competencia p {
+      color: var(--texto-claro);
+      font-size: 0.9rem;
+    }
+
+    /* PROJETOS */
+
+    .projeto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+    }
+
+    .projeto-visual {
+      min-height: 430px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+      background:
+        radial-gradient(circle at 70% 30%, #2ea98b 0 5%, transparent 6%),
+        radial-gradient(circle at 34% 64%, #e4573d 0 8%, transparent 9%),
+        radial-gradient(circle at 55% 50%, #ead79d 0 17%, transparent 18%),
+        linear-gradient(135deg, #cfe9e3, #f4e8c1);
+    }
+
+    .mapa-abstrato {
+      width: 78%;
+      aspect-ratio: 1.35;
+      border: 7px solid var(--branco);
+      border-radius: 8px;
+      background:
+        repeating-linear-gradient(
+          35deg,
+          rgba(22, 135, 124, 0.8) 0 7px,
+          transparent 7px 18px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(217, 68, 48, 0.65) 0 5px,
+          transparent 5px 20px
+        ),
+        #ead79d;
+      box-shadow: 0 20px 45px rgba(23, 63, 70, 0.25);
+      transform: rotate(-2deg);
+    }
+
+    .projeto-conteudo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 55px;
+    }
+
+    .categoria {
+      color: var(--verde);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .projeto h3 {
+      margin: 13px 0 20px;
+      color: var(--verde-escuro);
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .projeto p {
+      color: var(--texto-claro);
+    }
+
+    .tecnologias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 25px 0;
+    }
+
+    .tecnologias span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--verde-claro);
+      color: var(--verde-escuro);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .resultados {
+      margin: 0 0 28px 18px;
+      color: var(--texto-claro);
+    }
+
+    .resultados li {
+      margin-bottom: 6px;
+    }
+
+    .botao-projeto {
+      align-self: flex-start;
+      background: var(--verde-escuro);
+      color: var(--branco);
+    }
+
+    /* CONTATO */
+
+    .contato {
+      background: var(--verde-escuro);
+      color: var(--branco);
+    }
+
+    .contato .cabecalho-secao h2 {
+      color: var(--branco);
+    }
+
+    .contato .cabecalho-secao p {
+      color: #cfe1e0;
+    }
+
+    .links-contato {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .link-contato {
+      padding: 17px 23px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 9px;
+      color: var(--branco);
+      font-weight: 700;
+    }
+
+    .link-contato:hover {
+      border-color: var(--bege);
+      color: var(--bege);
+    }
+
+    footer {
+      padding: 24px 0;
+      background: #0e2d32;
+      color: #a9c0c1;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 850px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .sobre-grid,
+      .projeto {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .simbolo-geo {
+        width: 230px;
+        height: 230px;
+      }
+
+      .grade-competencias {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projeto-visual {
+        min-height: 300px;
+      }
+
+      .projeto-conteudo {
+        padding: 35px 28px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .grade-competencias {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">IVANA<span>.</span>GEO</a>
+
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#competencias">Competências</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="etiqueta">Portfólio GEO</span>
+
+          <h1>
+            Ivana <span>Bezerra</span>
+          </h1>
+
+          <h2>
+            Geoprocessamento | Sensoriamento Remoto | Análise Espacial
+          </h2>
+
+          <p>
+            Transformo dados geoespaciais em mapas, análises e informações
+            que ajudam a compreender o território e suas mudanças ambientais.
+          </p>
+
+          <div class="botoes">
+            <a class="botao" href="#projetos">Conhecer projetos</a>
+
+            <a
+              class="botao botao-secundario"
+              href="mailto:ivana.f.bezerra@gmail.com"
+            >
+              Entrar em contato
+            </a>
+          </div>
+        </div>
+
+        <div class="simbolo-geo" aria-hidden="true">
+          <div class="linha-mapa"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+
+        <div class="cabecalho-secao">
+          <span>Sobre mim</span>
+          <h2>Dados espaciais transformados em informação</h2>
+        </div>
+
+        <div class="sobre-grid">
+
+          <div class="sobre-texto">
+            <p>
+              Sou Ivana Bezerra, profissional interessada em geoprocessamento,
+              sensoriamento remoto, cartografia temática e análise espacial.
+            </p>
+
+            <p>
+              Desenvolvo projetos utilizando dados geoespaciais e imagens de
+              satélite para investigar padrões, mudanças ambientais e relações
+              existentes no território.
+            </p>
+
+            <p>
+              Neste portfólio apresento estudos completos, desde a aquisição e
+              o processamento dos dados até a análise dos resultados e a
+              comunicação cartográfica.
+            </p>
+          </div>
+
+          <div class="destaque">
+            <h3>Meu objetivo</h3>
+
+            <p>
+              Aplicar geotecnologias na produção de análises claras, mapas
+              tecnicamente consistentes e informações úteis para o
+              planejamento e o monitoramento ambiental.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="competencias" id="competencias">
+      <div class="container">
+
+        <div class="cabecalho-secao">
+          <span>Competências</span>
+          <h2>Ferramentas e conhecimentos</h2>
+          <p>
+            Tecnologias utilizadas na produção, análise e apresentação de
+            informações geoespaciais.
+          </p>
+        </div>
+
+        <div class="grade-competencias">
+
+          <article class="competencia">
+            <span class="competencia-numero">01</span>
+            <h3>QGIS</h3>
+            <p>Análise raster e vetorial, simbologia e produção de layouts cartográficos.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">02</span>
+            <h3>Google Earth Engine</h3>
+            <p>Processamento de imagens de satélite e criação de séries temporais.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">03</span>
+            <h3>Sensoriamento remoto</h3>
+            <p>Interpretação de imagens, índices espectrais e monitoramento ambiental.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">04</span>
+            <h3>Cartografia temática</h3>
+            <p>Representação visual de fenômenos espaciais e comunicação de resultados.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">05</span>
+            <h3>Sentinel-2</h3>
+            <p>Composições, máscara de nuvens e análise multitemporal da vegetação.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">06</span>
+            <h3>Análise espacial</h3>
+            <p>Identificação de padrões, mudanças e relações existentes no território.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">07</span>
+            <h3>JavaScript</h3>
+            <p>Automação de rotinas de processamento no Google Earth Engine.</p>
+          </article>
+
+          <article class="competencia">
+            <span class="competencia-numero">08</span>
+            <h3>Comunicação técnica</h3>
+            <p>Elaboração de mapas, gráficos, relatórios e estudos de caso.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+
+        <div class="cabecalho-secao">
+          <span>Projetos</span>
+          <h2>Estudos em destaque</h2>
+          <p>
+            Projetos desenvolvidos com foco em análise ambiental,
+            sensoriamento remoto e geoprocessamento.
+          </p>
+        </div>
+
+        <article class="projeto">
+
+          <div class="projeto-visual">
+            <div class="mapa-abstrato" aria-label="Representação de mapa de NDVI"></div>
+          </div>
+
+          <div class="projeto-conteudo">
+            <span class="categoria">Sensoriamento remoto</span>
+
+            <h3>
+              Monitoramento multitemporal da vegetação no Distrito Federal
+            </h3>
+
+            <p>
+              Análise da dinâmica do NDVI entre 2018 e 2025, com foco na
+              estação seca e na identificação espacial de áreas de redução,
+              estabilidade e aumento da vegetação.
+            </p>
+
+            <div class="tecnologias">
+              <span>Sentinel-2</span>
+              <span>Google Earth Engine</span>
+              <span>QGIS</span>
+              <span>NDVI</span>
+              <span>JavaScript</span>
+            </div>
+
+            <ul class="resultados">
+              <li>54,85% da área apresentou estabilidade.</li>
+              <li>33,06% apresentou redução do NDVI.</li>
+              <li>12,09% apresentou aumento do NDVI.</li>
+              <li>Tendência média ligeiramente negativa no período.</li>
+            </ul>
+
+            <!-- O PDF será adicionado posteriormente -->
+            <a
+              class="botao botao-projeto"
+              href="#contato"
+            >
+              Estudo de caso em breve
+            </a>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <div class="container">
+
+        <div class="cabecalho-secao">
+          <span>Contato</span>
+          <h2>Vamos conversar?</h2>
+          <p>
+            Entre em contato para oportunidades profissionais, projetos ou
+            colaboração na área de geotecnologias.
+          </p>
+        </div>
+
+        <div class="links-contato">
+
+          <a
+            class="link-contato"
+            href="mailto:ivana.f.bezerra@gmail.com"
+          >
+            E-mail
+          </a>
+
+          <a
+            class="link-contato"
+            href="https://www.linkedin.com/in/ivana-bezerra-765650332"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="link-contato"
+            href="https://github.com/ivanafbezerra-afk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Ivana Bezerra — Portfólio de Geoprocessamento
+    </div>
+  </footer>
+
+</body>
+</html>
