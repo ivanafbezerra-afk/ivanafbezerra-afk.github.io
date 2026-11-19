@@ -1,0 +1,26 @@
+GeoReport no portfólio — atualização 2026-11-19
+
+Arquivos incluídos:
+- capa-georeport.png
+- estudo-georeport-diagnostico-territorial.pdf
+- novo cartão de projeto nas versões index.html (EN) e pt/index.html (PT)
+- filtro Automação GIS, também incluído na categoria SIG
+- main.js atualizado para filtrar projetos com duas categorias
+
+ATENÇÃO — GitHub:
+Os links do cartão do GeoReport estão configurados para:
+https://github.com/ivanafbezerra-afk/GeoReport
+
+O endereço e a branch main não puderam ser confirmados. Se o repositório
+foi criado com outro nome, altere esses links nos dois arquivos index.html.
+O site não hospeda os scripts do GeoReport; os botões apontam ao GitHub.
+
+ATENÇÃO — Estudo de caso:
+O PDF foi incluído integralmente, sem edição. Revise as páginas 6 e 7, que
+contêm títulos referindo-se a 'mudança do NDVI', e a página 8, que contém
+texto repetido/defeitos de diagramação, antes da publicação definitiva.
+
+Publicação:
+Envie TODO o conteúdo desta pasta à raiz do repositório GitHub Pages
+(incluindo a pasta pt, as imagens, o PDF e o main.js). Não exclua arquivos
+antigos do site. Atualize a página para ver a quinta categoria.
