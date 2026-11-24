@@ -24,39 +24,3 @@
 /* GeoReport project: keep the full user-supplied map cover visible. */
 .project-image.georeport-image{background:#fff}
 .project-image img.georeport-cover{object-fit:contain;object-position:center;padding:6px;background:#fff}
-
-
-/* Featured GeoReport: first in the project gallery, with a wider presentation. */
-.gallery > .project-featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
-  border: 2px solid rgba(88, 201, 185, .73);
-  background: linear-gradient(130deg, #0c3333, #123b37);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, .26);
-}
-.project-featured .project-image {
-  height: 100%;
-  min-height: 410px;
-  border-right: 1px solid rgba(88, 201, 185, .25);
-}
-.project-featured .project-body {
-  padding: clamp(27px, 3.5vw, 43px);
-  align-self: center;
-}
-.project-featured h3 {
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
-}
-.project-featured p { font-size: 1rem; line-height: 1.65; }
-.project-featured .project-label { color: #e9d79d; }
-.project-featured .project-actions { gap: 10px; }
-.project-featured .project-button { font-size: .85rem; }
-@media (max-width: 800px) {
-  .gallery > .project-featured { display: block; }
-  .project-featured .project-image { height: 320px; min-height: 0; border-right: 0; border-bottom: 1px solid rgba(88, 201, 185, .25); }
-}
-@media (max-width: 560px) {
-  .project-featured .project-image { height: 240px; }
-  .project-featured .project-body { padding: 24px 20px 28px; }
-  .project-featured .project-button { width: 100%; }
-}

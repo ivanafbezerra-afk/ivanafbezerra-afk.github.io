@@ -29,3 +29,15 @@
 - `curriculo-ivana-bezerra.pdf` — currículo original em português
 
 **Observação:** este pacote não publica alterações automaticamente no seu repositório.
+
+
+## Atualização bilíngue (24/11/2026)
+
+- Versão inglês: `index.html`. Estudos GeoReport e NDVI abrem arquivos `study-*.pdf` em inglês, com capas `georeport_cover_en.png` e `cover_project_ndvi.png`.
+- Versão português: `pt/index.html`. Estudos GeoReport e NDVI abrem PDFs `estudo-*.pdf` em português.
+- Repositório GeoReport: https://github.com/ivanafbezerra-afk/GeoReport (arquivos verificados: `main.py`, `earth_engine_mapbiomas.py`, `technical_report.py`).
+- LinkedIn correto nas duas páginas: https://www.linkedin.com/in/ivana-bezerra/
+- Todos os cartões têm o mesmo tamanho, inclusive o GeoReport.
+- **Projeto mais recente primeiro**: o `main.js` organiza a galeria pelo atributo `data-order` em ordem decrescente. Para incluir um projeto novo, dê a ele um número MAIOR que o atual máximo (atualmente `5`, no GeoReport). Mantenha o atributo em ambas as versões.
+- Para publicar: substituir o conteúdo da raiz do repositório `ivanafbezerra-afk.github.io` pelo conteúdo desta pasta, incluindo a pasta `pt/` e os novos PDFs e PNGs. Não carregar a pasta-raiz como uma subpasta extra.
+- Outros estudos seguem em português até suas versões traduzidas estarem disponíveis.
