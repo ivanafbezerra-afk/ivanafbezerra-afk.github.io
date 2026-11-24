@@ -1,3 +1,12 @@
+// Display the newest project first in both language versions.
+// Set data-order to the next higher number when adding a new project card.
+const gallery = document.getElementById('projectGallery');
+if (gallery) {
+  [...gallery.querySelectorAll(':scope > .project-card')]
+    .sort((a, b) => Number(b.dataset.order || 0) - Number(a.dataset.order || 0))
+    .forEach(card => gallery.appendChild(card));
+}
+
 // Interactive filtering shared by both language versions.
 const filters = [...document.querySelectorAll('.filter')];
 const cards = [...document.querySelectorAll('.project-card')];
