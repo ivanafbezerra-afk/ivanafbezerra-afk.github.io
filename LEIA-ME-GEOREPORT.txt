@@ -24,3 +24,9 @@ Publicação:
 Envie TODO o conteúdo desta pasta à raiz do repositório GitHub Pages
 (incluindo a pasta pt, as imagens, o PDF e o main.js). Não exclua arquivos
 antigos do site. Atualize a página para ver a quinta categoria.
+
+
+ATUALIZACAO DOS LINKS (23/11/2026):
+Repositorio GitHub correto: https://github.com/ivanafbezerra-afk/GeoReport_Diagnostico_territorial
+GeoReport agora aparece como primeiro projeto em destaque (EN e PT).
+WhatsApp removido apenas da barra superior (contato de rodape preservado).
